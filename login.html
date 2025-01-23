@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login - Meu Bairro</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <h2>Login de Administrador</h2>
+      <form id="loginForm" class="login-form">
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" placeholder="Digite seu e-mail" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Senha</label>
+          <input type="password" id="password" placeholder="Digite sua senha" required />
+        </div>
+        <button type="submit" class="login-button">Entrar</button>
+      </form>
+      <p class="login-info">
+        Apenas administradores têm acesso. <a href="index.html" class="link">Voltar ao site</a>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Função de login para administradores
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Usuários administradores (Exemplo fictício)
+      const adminCredentials = [
+        { email: "madson@gmail.com", password: "123456" },
+        { email: "marcio@gmail.com", password: "123456" },
+        { email: "claudio@gmail.com", password: "123456" },
+        { email: "danilo@gmail.com", password: "123456" },
+        { email: "romulo@gmail.com", password: "123456" }
+      ];
+
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      // Exibe um loader no botão
+      const loginButton = document.querySelector(".login-button");
+      loginButton.textContent = "Entrando...";
+      loginButton.disabled = true;
+
+      // Simula a autenticação
+      setTimeout(() => {
+        const isAdmin = adminCredentials.some(
+          (admin) => admin.email === email && admin.password === password
+        );
+
+        if (isAdmin) {
+          alert("Login bem-sucedido! Bem-vindo, administrador.");
+          window.location.href = "admin_dashboard.html"; // Redireciona para a nova página
+        } else {
+          alert("Acesso negado. Apenas administradores têm permissão.");
+        }
+
+        loginButton.textContent = "Entrar";
+        loginButton.disabled = false;
+      }, 1500); // Simula um tempo de resposta de 1.5 segundos
+    });
+  </script>
+</body>
+</html>

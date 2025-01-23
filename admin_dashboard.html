@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel do Administrador - Meu Bairro</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="admin-container">
+    <h2>Painel do Administrador</h2>
+    <h3>Status das Solicitações</h3>
+    <table class="status-table">
+      <thead>
+        <tr>
+          <th>Solicitação</th>
+          <th>Data</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Reparo de Buraco na Rua</td>
+          <td>01/12/2024</td>
+          <td class="status-pending">Pendente</td>
+        </tr>
+        <tr>
+          <td>Troca de Lâmpada Pública</td>
+          <td>29/11/2024</td>
+          <td class="status-completed">Concluído</td>
+        </tr>
+        <tr>
+          <td>Coleta de Resíduos Não Realizada</td>
+          <td>28/11/2024</td>
+          <td class="status-in-progress">Em Andamento</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Reclamações Recentes</h3>
+    <ul class="complaints-list">
+      <li>
+        <strong>Data:</strong> 27/11/2024<br />
+        <strong>Reclamação:</strong> Ruídos excessivos durante a noite na Rua 10.<br />
+        <strong>Status:</strong> <span class="status-pending">Pendente</span>
+      </li>
+      <li>
+        <strong>Data:</strong> 25/11/2024<br />
+        <strong>Reclamação:</strong> Vazamento de água em frente à escola municipal.<br />
+        <strong>Status:</strong> <span class="status-completed">Resolvido</span>
+      </li>
+      <li>
+        <strong>Data:</strong> 20/11/2024<br />
+        <strong>Reclamação:</strong> Falta de coleta de lixo por 5 dias consecutivos.<br />
+        <strong>Status:</strong> <span class="status-in-progress">Em Andamento</span>
+      </li>
+    </ul>
+    <a href="index.html" class="back-to-home">Sair</a>
+  </div>
+</body>
+</html>

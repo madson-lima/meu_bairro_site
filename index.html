@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Aplicativo Meu Bairro conecta a comunidade com serviços públicos para melhorias locais, facilitando reportar problemas e solicitar serviços."
+    />
+    <meta
+      name="keywords"
+      content="app, meu bairro, serviços públicos, comunidade, reportar problemas"
+    />
+    <meta name="author" content="Meu Bairro" />
+    <title>Meu Bairro - Aplicativo de Serviços Comunitários</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+  </head>
+  <body>
+    <!-- Barra de Progresso -->
+    <div id="progressBarContainer">
+      <div id="progressBar"></div>
+    </div>
+
+    <header class="header">
+      <div class="container">
+        <img
+          src="images/logo.png"
+          alt="Logo Meu Bairro"
+          class="logo"
+          loading="lazy"
+        />
+        <nav class="nav">
+          <a href="#sobre">Sobre</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#galeria">Galeria</a>
+          <a href="#depoimentos">Depoimentos</a>
+          <a href="#contato">Contato</a>
+        </nav>
+
+        <button onclick="location.href='login.html'" class="login-button">
+          Login
+        </button>
+
+        <!-- Ferramentas de Acessibilidade -->
+        <div class="accessibility-and-filter-container">
+          <div class="accessibility-tools">
+            <button
+              id="increaseFont"
+              class="accessibility-button"
+              title="Aumentar Fonte"
+            >
+              <i class="fas fa-plus"></i>
+            </button>
+            <button
+              id="decreaseFont"
+              class="accessibility-button"
+              title="Diminuir Fonte"
+            >
+              <i class="fas fa-minus"></i>
+            </button>
+            <button
+              id="toggleTheme"
+              class="accessibility-button"
+              title="Alterar Tema"
+            >
+              <i class="fas fa-adjust"></i>
+            </button>
+          </div>
+
+          <!-- Filtro de Daltonismo -->
+          <div class="color-mode-container">
+            <label for="colorModeSelector" class="color-mode-label"
+              >Filtro de Daltonismo</label
+            >
+            <select id="colorModeSelector" class="color-mode-selector">
+              <option value="normal">Cores Padrão</option>
+              <option value="protanopia">Protanopia</option>
+              <option value="protanomalia">Protanomalia</option>
+              <option value="deuteranopia">Deuteranopia</option>
+              <option value="deuteranomalia">Deuteranomalia</option>
+              <option value="tritanopia">Tritanopia</option>
+              <option value="tritanomalia">Tritanomalia</option>
+              <option value="acromatopsia">Acromatopsia</option>
+              <option value="acromatomalia">Acromatomalia</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="banner">
+      <div class="banner-overlay"></div>
+      <div class="container banner-content">
+        <h1>Bem-vindo ao Meu Bairro</h1>
+        <p>Conectando você com os serviços da sua comunidade.</p>
+        <a href="#sobre" class="cta-button">Saiba Mais</a>
+      </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="sobre" class="section">
+      <div class="container">
+        <h2>Sobre o Aplicativo</h2>
+        <p>
+          O aplicativo "Meu Bairro" é uma plataforma digital que permite aos
+          cidadãos reportar problemas urbanos e solicitar serviços públicos,
+          como reparos de buracos, melhorias na iluminação e solução de
+          vazamentos. Seu objetivo é facilitar a comunicação entre a comunidade
+          e os órgãos públicos, promovendo uma gestão urbana mais eficiente e
+          participativa.
+        </p>
+      </div>
+    </section>
+
+    <!-- Vídeo de Apresentação -->
+    <section class="presentation-video">
+      <h2>Apresentação</h2>
+      <p>Assista ao vídeo de introdução sobre "Meu Bairro".</p>
+      <video id="presentationVideo" controls autoplay loop muted>
+        <source src="videos/video_meubairro_mobile.mp4" type="video/mp4" />
+        Seu navegador não suporta a exibição de vídeos.
+      </video>
+    </section>
+
+    <!-- Seção Serviços -->
+    <section id="servicos" class="section bg-light">
+      <div class="container">
+        <h2>Serviços Oferecidos</h2>
+        <div class="services">
+          <!-- Lista de Serviços -->
+          <div class="service">
+            <i class="fas fa-tree service-icon"></i>
+            <h3>Árvores e Vegetação</h3>
+            <p>
+              Relate problemas com árvores caídas, galhos baixos ou
+              interferências de raízes.
+            </p>
+          </div>
+          <div class="service">
+            <i class="fas fa-road service-icon"></i>
+            <h3>Pavimentação e Estrutura</h3>
+            <p>
+              Notifique buracos e problemas na pavimentação e calçadas
+              danificadas.
+            </p>
+          </div>
+          <div class="service">
+            <i class="fas fa-traffic-light service-icon"></i>
+            <h3>Sinalização e Equipamentos</h3>
+            <p>
+              Informe sobre semáforos com defeito e placas de trânsito
+              danificadas.
+            </p>
+          </div>
+          <div class="service">
+            <i class="fas fa-tint service-icon"></i>
+            <h3>Serviços Públicos</h3>
+            <p>
+              Solicite reparos em vazamentos de água e problemas de iluminação
+              pública.
+            </p>
+          </div>
+          <div class="service">
+            <i class="fas fa-leaf service-icon"></i>
+            <h3>Naturais e Ambientais</h3>
+            <p>Reportar deslizamentos de terra e poluição do ar ou da água.</p>
+          </div>
+          <div class="service">
+            <i class="fas fa-car service-icon"></i>
+            <h3>Trânsito e Mobilidade</h3>
+            <p>Relate congestionamentos e problemas com faixas de pedestre.</p>
+          </div>
+          <div class="service">
+            <i class="fas fa-medkit service-icon"></i>
+            <h3>Saúde e Segurança</h3>
+            <p>
+              Informe sobre postos de saúde fechados ou falta de medicamentos.
+            </p>
+          </div>
+          <div class="service">
+            <i class="fas fa-bullhorn service-icon"></i>
+            <h3>Poluição Sonora</h3>
+            <p>
+              Denuncie ruídos excessivos que prejudiquem a qualidade de vida.
+            </p>
+          </div>
+          <div class="service">
+            <i class="fas fa-building service-icon"></i>
+            <h3>Edificações Irregulares</h3>
+            <p>
+              Relate construções irregulares ou situações de risco estrutural.
+            </p>
+          </div>
+          <div class="service">
+            <i class="fas fa-bug service-icon"></i>
+            <h3>Controle de Pragas</h3>
+            <p>
+              Solicite serviços de controle de pragas urbanas, como roedores e
+              insetos.
+            </p>
+          </div>
+          <div class="service">
+            <i class="fas fa-trash service-icon"></i>
+            <h3>Coleta de Resíduos</h3>
+            <p>
+              Informe sobre coleta de lixo não realizada ou pontos de descarte
+              irregular.
+            </p>
+          </div>
+          <div class="service">
+            <i class="fas fa-water service-icon"></i>
+            <h3>Áreas Alagadas</h3>
+            <p>
+              Relate pontos de alagamento e bloqueios causados por acúmulo de
+              água.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galeria -->
+    <section id="galeria" class="section">
+      <div class="container">
+        <h2>Galeria de Imagens</h2>
+        <div class="carousel">
+          <div class="carousel-images">
+            <img
+              src="images/servicopublico1.jpg"
+              alt="Problema de pavimentação"
+              loading="lazy"
+            />
+            <img
+              src="images/servicopublico2.jpg"
+              alt="Vazamento de água"
+              loading="lazy"
+            />
+            <img
+              src="images/servicopublico3.jpg"
+              alt="Iluminação pública defeituosa"
+              loading="lazy"
+            />
+          </div>
+          <button class="carousel-control prev">&#10094;</button>
+          <button class="carousel-control next">&#10095;</button>
+        </div>
+        <div class="carousel-buttons">
+          <button id="pauseButton">Pausar</button>
+          <button id="playButton" style="display: none">Retomar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Depoimentos -->
+    <section id="depoimentos" class="section">
+      <div class="container">
+        <h2>Depoimentos de Usuários</h2>
+        <div class="testimonials">
+          <div class="testimonial">
+            <p>
+              "O app 'Meu Bairro' me ajudou a resolver um problema de buraco na
+              minha rua rapidamente!"
+            </p>
+            <span>- Maria Silva</span>
+          </div>
+          <div class="testimonial">
+            <p>
+              "Muito útil para notificar a prefeitura sobre iluminação pública.
+              Recomendo!"
+            </p>
+            <span>- João Santos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Contato -->
+    <section id="contato" class="section">
+      <div class="container">
+        <h2>Fale Conosco</h2>
+        <form id="contactForm" class="contact-form">
+          <div class="form-group">
+            <input type="email" placeholder="Digite seu e-mail" required />
+            <textarea placeholder="Digite sua mensagem" required></textarea>
+          </div>
+          <button type="submit">Enviar</button>
+        </form>
+        <p>
+          Ou entre em contato pelo e-mail:
+          <a href="mailto:meubairro.mobile@gmail.com" class="contact-email"
+            >meubairro.mobile@gmail.com</a
+          >
+        </p>
+      </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 Meu Bairro. Todos os direitos reservados.</p>
+        <p>
+          <a href="politica-privacidade.html">Política de Privacidade</a> |
+          <a href="termos-uso.html">Termos de Uso</a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Inclusão do VLibras -->
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget("https://vlibras.gov.br/app");
+    </script>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
